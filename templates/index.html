@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات علي إكسبريس</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>أفضل المنتجات على علي إكسبريس</h1>
+    </header>
+    <main id="product-list">
+        {% for product in products %}
+        <div class="product">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.price }}</p>
+            <a href="{{ product.link }}" target="_blank">اشتر الآن</a>
+        </div>
+        {% endfor %}
+    </main>
+    <footer>
+        <p>&copy; 2024 - جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>
